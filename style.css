@@ -4,7 +4,7 @@
   
     box-sizing: border-box;
   
-    font-family: "Baloo Bhai 2", cursive;
+    font-family:'Roboto';
   }
   nav {
     display: flex;
@@ -102,7 +102,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     z-index: 9999;
     overflow: hidden;
   }
@@ -119,17 +119,19 @@
     text-decoration: none;
     color: white;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 468px) {
     #mobile {
-      display: block;
+      display: none;
     }
     #navbar {
       display: none;
+       visibility: hidden;
     }
     #home {
       display: flex;
   
       margin-top: 20px;
+      
   
       text-align: center;
   
@@ -140,15 +142,10 @@
       text-align: center;
     }
   
-    .logo1 {
-      justify-content: flex-start;
-      align-items: flex-start;
-      font-size: 1.8rem;
-      color: #fff;
-  
-      margin-left: 20px;
-      margin-right: 500px;
-      margin-top: 15px;
+  #mobile .logo1 {
+    display: none;
+   
+  }
     }
     a:hover {
       background-color: rgb(22, 22, 94);
@@ -164,21 +161,10 @@
   
       height: 180vh;
     }
-  }
   .title {
     text-align: center;
     width: 100%;
     color: yellow;
-  }
-  
-  #menu {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 20px 40px;
-    background: rgb(245, 242, 242);
-    min-height: 100vh;
-    /* margin-bottom: 20px; */
   }
   .heading {
     background: rgb(245, 242, 242);
@@ -358,3 +344,38 @@
     height:fit-content;
     width: 400px;
   }
+  .logo6 {
+    animation: flip 3s infinite;
+    height: 100px;
+    width: 100px;
+  }
+  @keyframes flip{
+    0%{
+      transform: rotate3d(0,0,0,0);}
+      20%{
+        transform: rotate3d(0,1,0,360deg);}
+        40%{
+          transform: rotate3d(0,0,0,360deg);}
+          60%{
+            transform: rotate3d(1,0,0,180deg);}
+            80%{
+              transform: rotate3d(0,0,1,360deg);}
+              100%{
+                transform: rotate3d(1,0,0,360deg);}
+              }
+   .marquee {
+    overflow: visible;
+    width: 10%;
+    height: 20%;
+    position: relative;
+    animation: MarqueeRight linear 2s infinite;
+   }         
+   @keyframes MarqueeLeft {
+    0%{ right: -90% }
+    100% { right: 220% }
+   }
+   .logo {
+    animation: flip 8s infinite;
+    height: 100px;
+    width: 100px;
+   }
